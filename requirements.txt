@@ -84,7 +84,7 @@ trio-websocket==0.11.1
 typing_extensions==4.10.0
 tzdata==2025.1
 uncompyle==2.0.0
-urllib3==2.1.0
+urllib3==2.2.2
 watchdog==6.0.0
 whichcraft==0.6.1
 wsproto==1.2.0
