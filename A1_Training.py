@@ -1,42 +1,40 @@
-Python 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)] on win32
-Type "help", "copyright", "credits" or "license()" for more information.
->>> import pandas as pd
-... import numpy as np
-... import matplotlib.pyplot as plt
-... from mpl_toolkits.mplot3d import Axes3D
-... from sklearn.model_selection import KFold
-... from sklearn.preprocessing import StandardScaler
-... from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
-... import tensorflow as tf
-... from tensorflow.keras.models import Sequential
-... from tensorflow.keras.layers import Dense, Dropout
-... from tensorflow.keras.callbacks import EarlyStopping, LearningRateScheduler
-... import math
-... 
-... # Load the Dataset
-... data = pd.read_csv("detailed_meals_macros_three_disease.csv")
-... 
-... 
-... # Prepare Inputs and Outputs
-... X = data[['Heart Disease Risk', 'Diabetes Risk', 'Kidney Disease Risk']].values
-... y = data[['Protein', 'Carbohydrates', 'Fat']].values
-... N_outputs = y.shape[1]
-... 
-... # Standardize the outputs
-... scaler = StandardScaler()
-... y_scaled = scaler.fit_transform(y)
-... 
-... # Cosine Annealing Learning Rate Scheduler
-... def cosine_annealing(epoch, lr):
-...     min_lr = 1e-5
-...     max_lr = 1e-3
-...     return min_lr + (max_lr - min_lr) * (1 + math.cos(math.pi * epoch / 50)) / 2
-... 
-... # Mean Absolute Percentage Error (MAPE) Function
-... def mean_absolute_percentage_error(y_true, y_pred):
-...     epsilon = 1e-5  # Avoid division by zero
-...     return np.mean(np.abs((y_true - y_pred) / (y_true + epsilon))) * 100
-... 
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+from sklearn.model_selection import KFold
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout
+from tensorflow.keras.callbacks import EarlyStopping, LearningRateScheduler
+import math
+
+# Load the Dataset
+data = pd.read_csv("detailed_meals_macros_three_disease.csv")
+
+
+# Prepare Inputs and Outputs
+X = data[['Heart Disease Risk', 'Diabetes Risk', 'Kidney Disease Risk']].values
+y = data[['Protein', 'Carbohydrates', 'Fat']].values
+N_outputs = y.shape[1]
+
+# Standardize the outputs
+scaler = StandardScaler()
+y_scaled = scaler.fit_transform(y)
+
+# Cosine Annealing Learning Rate Scheduler
+def cosine_annealing(epoch, lr):
+    min_lr = 1e-5
+    max_lr = 1e-3
+    return min_lr + (max_lr - min_lr) * (1 + math.cos(math.pi * epoch / 50)) / 2
+
+# Mean Absolute Percentage Error (MAPE) Function
+def mean_absolute_percentage_error(y_true, y_pred):
+    epsilon = 1e-5  # Avoid division by zero
+    return np.mean(np.abs((y_true - y_pred) / (y_true + epsilon))) * 100
+
 # 5-Fold Cross-Validation
 kf = KFold(n_splits=5, shuffle=True, random_state=42)
 fold_results = []
