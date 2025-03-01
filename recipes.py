@@ -28,7 +28,7 @@ def generate_recipe(dish_name):
         response = openai.ChatCompletion.create(
             model="gpt-4",
             messages=[
-                {"role": "system", "content": "You are a professional chef providing easy-to-follow recipes."},
+                {"role": "system", "content": "You are a professional chef providing easy-to-follow recipes using the given ingredients."},
                 {"role": "user", "content": prompt}
             ],
             temperature=0.7
