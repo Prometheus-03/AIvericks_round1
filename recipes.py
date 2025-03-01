@@ -7,7 +7,7 @@ import time
 
 
 # Load the CSV file
-df = pd.read_csv("All_Diets.csv")
+df = pd.read_csv("data/All_Diets.csv")
 
 # Ensure the correct column name is used for dish names
 DISH_NAME_COLUMN = "Recipe_name"  # Updated column name
@@ -44,6 +44,6 @@ def generate_recipe(dish_name):
 df[RECIPE_COLUMN] = df[DISH_NAME_COLUMN].apply(generate_recipe)
 
 # Save the updated CSV file
-df.to_csv("All_Diets_with_Recipes.csv", index=False)
+df.to_csv("data/All_Diets_with_Recipes.csv", index=False)
 
 print("Updated CSV file saved as 'All_Diets_with_Recipes.csv'")
