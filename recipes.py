@@ -4,8 +4,6 @@ import openai
 import pandas as pd
 import time
 
-
-
 # Load the CSV file
 df = pd.read_csv("data/All_Diets.csv")
 
