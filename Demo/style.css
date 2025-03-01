@@ -1,0 +1,162 @@
+body {
+    background: linear-gradient(135deg, rgba(36, 3, 53, 1), rgba(0, 0, 0, 1));
+    -webkit-background: linear-gradient(135deg, rgba(36, 3, 53, 1), rgba(0, 0, 0, 1));
+    -moz-background: linear-gradient(135deg, rgba(36, 3, 53, 1), rgba(0, 0, 0, 1));
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    position: absolute;
+    height: 20vh;
+    border-radius: 50%;
+    top:5vh;
+    right: max(68px, 10vw);
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    font-family: sans-serif;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.input-section label {
+    display:inline-table;
+    width: 150px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.input-section input[type="number"],
+.input-section select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 200px;
+}
+
+.input-section button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-section button:hover {
+    background-color: #4cae4c;
+}
+
+.output-section {
+    max-height: 25vh;
+    height: 25vh;
+    overflow-y: scroll;
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #181818;
+}
+
+.output-title {
+    position: relative;
+    top: -4vh;
+    height: 0vh;
+}
+
+.output-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.output-section > ul > li {
+    padding: 10px 10px 15px 10px;
+    border-radius: 5px;
+    background-color: rgb(36, 36, 36);
+    margin-bottom: 8px;
+    margin-left: 8px;
+}
+
+.output-section > ul > li > ul > li{
+    padding: 5px 0px 0px 5px;
+    border-radius: 5px;
+    background-color: rgb(36, 36, 36);
+    margin-bottom: 8px;
+    margin-left: 8px;
+}
+
+.output-section > ul > li > ol > li{
+    padding: 5px 0px 0px 5px;
+    border-radius: 5px;
+    background-color: rgb(36, 36, 36);
+    margin-bottom: 8px;
+    margin-left: 8px;
+}
+
+.output-section h3 {
+    margin-top: 0;
+    color: #3c9af7;
+}
+
+.output-section h4 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.output-section ul,
+.output-section ol {
+    padding-left: 20px;
+}
+
+#foodList {
+    list-style: none;
+}
+
+#foodList > li {
+    position: relative;
+    left: -1vw;
+}
+
+.nutrition-info {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px dashed #ddd;
+    position: relative;
+    bottom: auto;
+    width: 100%;
+    left: auto;
+    line-height: 24px;
+}
+
+.nutrition-info h4 {
+    margin-top: 10px;
+    margin-bottom: 3px;
+    font-weight: bold;
+}
+
+.nutrition-info ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.nutrition-info li {
+    margin-bottom: 2px;
+}
