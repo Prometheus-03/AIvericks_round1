@@ -315,9 +315,9 @@ print(output_df1.describe())
 print(output_df2.describe())
 print(output_df3.describe())
 
-output_df1.to_excel('diabetes_risk.xlsx', index=False, header='diabetes_risk')
-output_df2.to_excel('heart_disease_risk.xlsx', index=False, header='heart_disease_risk')
-output_df3.to_excel('kidney_disease_risk.xlsx', index=False, header='kidney_disease_risk')
+output_df1.to_excel('data/diabetes_risk.xlsx', index=False, header='diabetes_risk')
+output_df2.to_excel('data/heart_disease_risk.xlsx', index=False, header='heart_disease_risk')
+output_df3.to_excel('data/kidney_disease_risk.xlsx', index=False, header='kidney_disease_risk')
 
 
 model1.save('models/Diabetes_Risk.h5')
